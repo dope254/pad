@@ -1,30 +1,15 @@
-
-// src/components/ChatBox/ChatBox.jsx
 import React, { useState, useRef, useEffect } from 'react';
 import { useChatStore } from '../../store/chat.store';
 import { QuestionnaireService } from '../../services/questionnaire.service';
 import { ArtifactService } from '../../services/artifact.service';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrophone, faWandMagicSparkles, faComments } from '@fortawesome/free-solid-svg-icons';
+import notificationSound from '../../assets/sounds/notification_tone.mp3';
 import './ChatBox.css';
 
-// Create audio context for notification sound
-const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-const createNotificationSound = () => {
-  const oscillator = audioContext.createOscillator();
-  const gainNode = audioContext.createGain();
-  
-  oscillator.connect(gainNode);
-  gainNode.connect(audioContext.destination);
-  
-  oscillator.type = 'sine';
-  oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
-  gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-  
-  oscillator.start();
-  oscillator.stop(audioContext.currentTime + 0.1);
-};
+// Create audio element for notification sound
+const notificationAudio = new Audio(notificationSound);
+notificationAudio.volume = 0.5; // Adjust volume as needed
 
 const artifactTypes = [
   'stakeholders', 'empathy_maps', 'user_stories',
@@ -51,6 +36,13 @@ export const ChatBox = () => {
     setLastGeneratedArtifact
   } = useChatStore();
 
+  const playNotificationSound = () => {
+    notificationAudio.currentTime = 0; // Reset to start
+    notificationAudio.play().catch(error => {
+      console.warn('Failed to play notification sound:', error);
+    });
+  };
+
   // Initialize with first question
   useEffect(() => {
     if (!currentQuestion && messages.length === 0) {
@@ -61,7 +53,7 @@ export const ChatBox = () => {
         setCurrentQuestion(firstQuestion);
         addMessage({ text: firstQuestion, type: 'ai', loading: false });
         setIsLoading(false);
-        createNotificationSound();
+        playNotificationSound();
       };
       loadFirstQuestion();
     }
@@ -140,7 +132,7 @@ export const ChatBox = () => {
     }
     
     setIsLoading(false);
-    createNotificationSound();
+    playNotificationSound();
   };
 
   const getInputPlaceholder = () => {
