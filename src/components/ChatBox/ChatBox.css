@@ -1,0 +1,132 @@
+/* src/components/DesignPad/styles/ChatBox.css */
+.chat-container {
+    position: fixed;
+    bottom: 30px;
+    right: 60px;
+    width: 320px;
+    max-height: 50vh;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .chat-content {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    /* border-radius: 12px; */
+    /* background: rgba(0, 0, 0, 0.2); */
+    backdrop-filter: blur(12px);
+  }
+  
+  .user-message, .ai-message {
+    max-width: 80%;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+    position: relative;
+    line-height: 1.5;
+    word-break: break-word;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .user-message {
+    align-self: flex-end;
+    background: rgba(0, 150, 255, 0.3);
+    background-color: #2796db;
+  }
+  
+  .ai-message {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.15);
+    background-color: #ffffff;
+    color: #2796db;
+  }
+  
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Fade-in for messages */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Chat input styling */
+  .chat-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    width: 100%;
+    /* background: rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0 0 12px 12px; */
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #333;
+    outline: none;
+  }
+  
+  .chat-input input::placeholder {
+    color: #333;
+  }
+  
+  .chat-input button {
+    padding: 8px 12px;
+    background: #E96230;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .chat-input button:hover {
+    background-color: #fff;
+    border: 1px solid #d15329;
+    color: #d15329;
+  }
+  
+  .mic-button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: #E96230;
+    cursor: pointer;
+  }
+  
+  .mic-button:hover {
+    color: #d15329;
+  }
+  
+  /* Loading dot animation for LLM message */
+  .loading-dot {
+    animation: blink 1s infinite;
+    font-size: 1.2em;
+    color: #E96230;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  

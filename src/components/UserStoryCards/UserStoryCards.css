@@ -1,0 +1,35 @@
+
+  /* src/components/DesignPad/styles/UserStoryCards.css */
+  .user-stories {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    font-size: small;
+  }
+  
+  .user-story-card {
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #E96230;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+  }
+  
+  .card-content {
+    color: white;
+    font-size: 1em;
+  }
+  
