@@ -6,14 +6,32 @@ import './Grid.css';
 
 export const Grid = () => {
   const canvasRef = useRef(null);
-  // Load the active story from localStorage or use a default value
   const [activeStory, setActiveStory] = useState(() => {
     const storedStory = localStorage.getItem('activeStory');
     return storedStory ? JSON.parse(storedStory) : null;
   });
 
-  // Define the handleSelect function to update the active story and store it in localStorage
-  
+  // Function to handle localStorage changes
+  const handleStorageChange = () => {
+    const storedStory = localStorage.getItem('activeStory');
+    setActiveStory(storedStory ? JSON.parse(storedStory) : null);
+  };
+
+  useEffect(() => {
+    // Listen to localStorage updates across tabs/windows
+    const handleStorageEvent = (event) => {
+      if (event.key === 'activeStory') {
+        handleStorageChange();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageEvent);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageEvent);
+    };
+  }, []);
+
   // Initialize grid
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -30,7 +48,7 @@ export const Grid = () => {
         id: patternId,
         width: 20,
         height: 20,
-        patternUnits: 'userSpaceOnUse'
+        patternUnits: 'userSpaceOnUse',
       });
 
       const circle = svgCreate('circle');
@@ -38,7 +56,7 @@ export const Grid = () => {
         cx: 0.5,
         cy: 0.5,
         r: 0.5,
-        fill: '#c3c3c3'
+        fill: '#c3c3c3',
       });
 
       svgAppend(pattern, circle);
@@ -48,7 +66,7 @@ export const Grid = () => {
       svgAttr(grid, {
         width: '100%',
         height: '100%',
-        fill: `url(#${patternId})`
+        fill: `url(#${patternId})`,
       });
 
       svgAppend(svg, grid);
@@ -81,7 +99,6 @@ export const Grid = () => {
         <ul className="io-control-list io-horizontal">
           <li><a href="/" target="_blank" rel="noopener noreferrer">Privacy</a></li>
           <li><a href="/" target="_blank" rel="noopener noreferrer">Terms</a></li>
-          <li><a href="/" target="_blank" rel="noopener noreferrer">Imprint</a></li>
           <li><a href="/">Cookie Preferences</a></li>
           <li><a href="/" data-track="help:open-about">About</a></li>
           <li><a href="/" target="_blank" rel="noopener noreferrer" data-track="help:open-report">Give Feedback</a></li>

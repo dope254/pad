@@ -1,22 +1,21 @@
-
-// src/components/DesignPad/UserStoryCards.jsx
 import React, { useState, useEffect } from 'react';
 import './UserStoryCards.css';
 import { userStoryData } from '../../data/userStoryData';
 
-export const UserStoryCards = ({ onStorySelect }) => {
+export const setLocalStorageItem = (key, value) => {
+  localStorage.setItem(key, JSON.stringify(value));
+  
+  // Dispatch a custom event to notify other parts of the app
+  const event = new Event('localStorageUpdate');
+  window.dispatchEvent(event);
+};
+
+export const UserStoryCards = () => {
   const [stories, setStories] = useState([]);
-  // Load the active story from localStorage or use a default value
-  const [activeStory, setActiveStory] = useState(() => {
-    const storedStory = localStorage.getItem('activeStory');
-    return storedStory ? JSON.parse(storedStory) : null;
-  });
 
   const handleSelect = (story) => {
-    setActiveStory(story);
-    localStorage.setItem('activeStory', JSON.stringify(story));
+    setLocalStorageItem('activeStory', story); // Use the custom function
   };
-
 
   useEffect(() => {
     // Transform the data for display
@@ -38,12 +37,9 @@ export const UserStoryCards = ({ onStorySelect }) => {
           className="user-story-card"
           onClick={() => handleSelect(story)}
         >
-          <div className="card-header">
-            {/* <i className="fas fa-user-circle stakeholder-icon" />
+          {/* <div className="card-header">
             <span className="stakeholder-name">{story.stakeholder}</span>
-            <span className="info-icon" title={story.info}>❗</span>
-            <span className="value-icon" title={story.value}>💡</span> */}
-          </div>
+          </div> */}
           <div className="card-content">
             <p className="user-story">{story.needs[0].role} {story.needs[0].goal}</p>
           </div>
@@ -52,5 +48,3 @@ export const UserStoryCards = ({ onStorySelect }) => {
     </div>
   );
 };
-
-

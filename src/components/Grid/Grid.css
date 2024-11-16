@@ -12,13 +12,14 @@
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     height: 100vh; /* Full viewport height */
-    padding-left: 10%; /* Slightly lean content to the left */
+    /* margin-top: 1rem; */
   }
   
   .content-layout {
+    margin-top: 2rem;
     position: relative;
     z-index: 1; /* Ensure content is above the SVG */
-    width: 80%; /* Adjust width as needed */
+    width: 84.5%; /* Adjust width as needed */
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* Align content left with slight margin */
@@ -27,7 +28,6 @@
   
   .main-content {
     width: 100%;
-    max-width: 900px; /* Set a max width for the content */
     margin: 0 auto; /* Center content horizontally */
     background: transparent; /* Transparent background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
