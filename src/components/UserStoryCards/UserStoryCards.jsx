@@ -1,34 +1,41 @@
 
 // src/components/DesignPad/UserStoryCards.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './UserStoryCards.css';
+import { userStoryData } from '../../data/userStoryData';
 
-export const UserStoryCards = () => {
-  const stories = [
-    {
-      stakeholder: 'Product Owner',
-      story: 'As a product owner, I want to track project progress',
-      info: 'Key stakeholder for project success',
-      value: 'Better project visibility'
-    }
-    // Add more stories as needed
-  ];
+export const UserStoryCards = ({ onStorySelect }) => {
+  const [stories, setStories] = useState([]);
+
+  useEffect(() => {
+    // Transform the data for display
+    const parsedStories = Object.entries(userStoryData.user_story).map(([stakeholder, value]) => ({
+      stakeholder,
+      needs: value.needs,
+      bdd: value.bdd_gherkin.map(
+        (scenario) => `Given ${scenario.given}, When ${scenario.when}, Then ${scenario.then}.`
+      ),
+    }));
+    setStories(parsedStories);
+  }, []);
 
   return (
     <div className="user-stories">
       {stories.map((story, index) => (
         <div key={index} className="user-story-card">
           <div className="card-header">
-            <i className="fas fa-user-circle stakeholder-icon" />
+            {/* <i className="fas fa-user-circle stakeholder-icon" />
             <span className="stakeholder-name">{story.stakeholder}</span>
             <span className="info-icon" title={story.info}>❗</span>
-            <span className="value-icon" title={story.value}>💡</span>
+            <span className="value-icon" title={story.value}>💡</span> */}
           </div>
           <div className="card-content">
-            <p className="user-story">{story.story}</p>
+            <p className="user-story">{story.needs[0].role} {story.needs[0].goal}</p>
           </div>
         </div>
       ))}
     </div>
   );
 };
+
+
