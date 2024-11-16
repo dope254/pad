@@ -13,11 +13,7 @@ export const Grid = () => {
   });
 
   // Define the handleSelect function to update the active story and store it in localStorage
-  const handleSelect = (story) => {
-    setActiveStory(story);
-    localStorage.setItem('activeStory', JSON.stringify(story));
-  };
-
+  
   // Initialize grid
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -77,8 +73,6 @@ export const Grid = () => {
       <div className="content-layout">
         {/* Active Content Area */}
         <div className="main-content">
-
-          {/* Pass activeStory to ActiveStoryContent */}
           <ActiveStoryContent activeStory={activeStory} />
         </div>
       </div>
