@@ -1,0 +1,60 @@
+{
+    "use_cases": [
+        {
+            "id": "usecase_1",
+            "name": "Locate and Pay at Stall",
+            "actors": ["Stall Owner", "M-Pesa User", "System"],
+            "precondition": "The stall owner has registered their location and name in the M-Pesa app.",
+            "postconditions": "The customer has successfully made a payment to the correct stall, and the payment is recorded in the system.",
+            "main_flow": [
+                "1. The M-Pesa user opens the app and selects the 'Pay' option.",
+                "2. The system detects the user's GPS coordinates and displays a list of nearby stalls.",
+                "3. The M-Pesa user browses the list and selects the correct stall.",
+                "4. The system verifies the accuracy of the selected stall's location and displays a confirmation screen.",
+                "5. The M-Pesa user confirms the payment and completes the transaction.",
+                "6. The payment is recorded and the stall owner receives the funds."
+            ],
+            "alternative_flow": [
+                "1. If the stall's location is inaccurate or the GPS signal is weak, the system prompts the user to confirm the location before proceeding.",
+                "2. If the user selects the wrong stall, the system asks for confirmation and allows them to modify their selection before proceeding with payment."
+            ]
+        },
+        {
+            "id": "usecase_2",
+            "name": "Pay Fare in Matatu",
+            "actors": ["Matatu Operator", "M-Pesa User", "System"],
+            "precondition": "The matatu operator is verified in the system and the user is within range of the matatu.",
+            "postconditions": "The fare is paid securely to the correct matatu operator, and the user receives a receipt for the transaction.",
+            "main_flow": [
+                "1. The M-Pesa user opens the app and selects the 'Pay Fare' option.",
+                "2. The system detects the user’s location and displays the nearby matatus, including verified matatu operators.",
+                "3. The M-Pesa user selects the matatu they are riding in.",
+                "4. The system confirms the selected matatu’s details and prompts the user to confirm the payment.",
+                "5. The M-Pesa user confirms the fare payment and completes the transaction.",
+                "6. The payment is successfully directed to the matatu operator, and the user receives a receipt."
+            ],
+            "alternative_flow": [
+                "1. If multiple matatus are detected nearby, the system asks the user to confirm the exact matatu they are riding in.",
+                "2. If the operator is not verified, the system rejects the payment request and informs the user."
+            ]
+        },
+        {
+            "id": "usecase_3",
+            "name": "Handle Payment Error at Stall or Matatu",
+            "actors": ["M-Pesa User", "System"],
+            "precondition": "The M-Pesa user has selected a stall or matatu for payment.",
+            "postconditions": "The user receives a notification of the error, and the payment is either reversed or the transaction is voided.",
+            "main_flow": [
+                "1. The M-Pesa user selects a stall or matatu and initiates the payment process.",
+                "2. The system detects an error in the payment process (e.g., incorrect location, operator verification failure).",
+                "3. The system notifies the user of the error and provides an option to retry or cancel the transaction.",
+                "4. The user either retries the payment or cancels the transaction.",
+                "5. If the user cancels, the system voids the transaction and notifies the stall or matatu operator."
+            ],
+            "alternative_flow": [
+                "1. If the user retries the payment, the system checks for any other errors and proceeds with the payment if the issue is resolved.",
+                "2. If the system is unable to resolve the error, the payment is not processed, and the user is informed that they need to contact support."
+            ]
+        }
+    ]
+}

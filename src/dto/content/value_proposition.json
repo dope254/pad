@@ -1,0 +1,55 @@
+{
+    "value_proposition": {
+        "stall_owners": {
+            "customer_jobs": "Ensure customers can locate their stall accurately in the app and pay without errors.",
+            "gains": "Increased convenience for customers, reduced payment errors, and enhanced stall visibility in high-traffic areas.",
+            "pains": "Risk of customers mistakenly paying the wrong stall, difficulty maintaining visibility among competing stalls, and challenges with temporary location changes.",
+            "gain_creators": [
+                "Enhanced visibility through GPS-based location tagging, allowing customers to locate stalls quickly.",
+                "In-app updates for stall owners to update their location, ensuring accuracy in case of movement."
+            ],
+            "pain_relievers": [
+                "Clear, unique stall identification within the app to reduce misdirected payments.",
+                "Option for stall owners to verify and update their GPS location periodically to avoid conflicts with nearby stalls."
+            ],
+            "products_and_services": [
+                "M-Pesa app location-based payment feature",
+                "User-friendly interface for stall identification and GPS updates"
+            ]
+        },
+        "matatu_operators": {
+            "customer_jobs": "Facilitate quick and accurate fare collection, minimize payment errors, and streamline digital fare transactions.",
+            "gains": "Enhanced convenience and speed of fare collection, improved passenger experience, and secure transactions.",
+            "pains": "Risk of passengers sending payments to the wrong operator, delays due to payment confusion, and security concerns with handling digital payments.",
+            "gain_creators": [
+                "Automatic detection of nearby verified matatus, simplifying the process for passengers to select the correct operator.",
+                "Prominent fare payment prompt when onboard a verified matatu, ensuring quick access."
+            ],
+            "pain_relievers": [
+                "App feature that confirms active matatu operators within a close range, reducing risk of incorrect payments.",
+                "Verification system for legitimate matatu operators to prevent fraudulent collections."
+            ],
+            "products_and_services": [
+                "M-Pesa app fare payment feature",
+                "Verification system for matatu operators"
+            ]
+        },
+        "mpesa_users": {
+            "customer_jobs": "Make accurate payments to stalls or matatus, locate correct vendors quickly, and avoid payment errors.",
+            "gains": "Convenient, accurate transactions with minimized errors and secure payment confirmations.",
+            "pains": "Difficulty differentiating vendors in busy areas, risk of paying the wrong stall or matatu, and uncertainty about the correct payment recipient.",
+            "gain_creators": [
+                "Precise GPS-based vendor identification for easy selection of the correct stall or matatu.",
+                "Confirmation prompt to double-check selected vendor before payment."
+            ],
+            "pain_relievers": [
+                "Clear, location-based options for nearby stalls and matatus, reducing the chance of payment mistakes.",
+                "In-app support for identifying the correct vendor based on proximity and verified credentials."
+            ],
+            "products_and_services": [
+                "M-Pesa app with location-based payment feature",
+                "Enhanced vendor verification and GPS proximity detection"
+            ]
+        }
+    }
+}

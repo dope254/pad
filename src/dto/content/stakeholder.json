@@ -1,0 +1,40 @@
+{
+    "stakeholders": [
+        {
+            "id": "stakeholder_1",
+            "name": "Safaricom Product Development Team",
+            "role": "Product Developers",
+            "interests": "Ensuring the new location-based feature integrates smoothly into the existing M-Pesa app ecosystem and aligns with Safaricom's quality and security standards."
+        },
+        {
+            "id": "stakeholder_2",
+            "name": "Stall Owners",
+            "role": "End Users",
+            "interests": "Increasing ease and accuracy of payment processing at their stalls and ensuring that customers can locate their business accurately in the app to reduce payment errors."
+        },
+        {
+            "id": "stakeholder_3",
+            "name": "Matatu Operators",
+            "role": "Verified Payment Collectors",
+            "interests": "Enabling convenient and fast fare collection by passengers while avoiding fraudulent or incorrect payments and ensuring accuracy for moving vehicles."
+        },
+        {
+            "id": "stakeholder_4",
+            "name": "M-Pesa Users",
+            "role": "End Users",
+            "interests": "Effortlessly locating and paying for goods and services at nearby stalls or paying fare in matatus with accuracy and security."
+        },
+        {
+            "id": "stakeholder_5",
+            "name": "Customer Support Team",
+            "role": "Support and Operations",
+            "interests": "Providing assistance to users and resolving issues related to misdirected payments, user interface concerns, and ensuring an optimal experience with the new feature."
+        },
+        {
+            "id": "stakeholder_6",
+            "name": "Regulatory Bodies",
+            "role": "Oversight and Compliance",
+            "interests": "Ensuring that the location-based payment feature adheres to legal and regulatory standards around payment security, data privacy, and transaction compliance."
+        }
+    ]
+}

@@ -1,0 +1,85 @@
+{
+    "empathy_map": {
+        "stall_owners": {
+            "what_they_see": [
+                "Growing use of digital payments by neighboring stalls and competitors.",
+                "The need for distinct branding to avoid customer confusion with nearby stalls.",
+                "Increased foot traffic of customers using M-Pesa as their primary payment option."
+            ],
+            "what_they_say": [
+                "‘I want an easier way for customers to find and pay me without errors.’",
+                "‘Customers often complain if payments go to the wrong stall.’",
+                "‘I’d like to update my location easily if I move my stall temporarily.’"
+            ],
+            "what_they_do": [
+                "Frequently update stall information to maintain visibility on the app.",
+                "Guide customers on how to locate the stall correctly in the app.",
+                "Follow up with customers if payments are delayed or misdirected."
+            ],
+            "what_they_hear": [
+                "Feedback from customers about app usability and location accuracy.",
+                "Encouragement from other business owners to adopt digital payments.",
+                "Suggestions from M-Pesa agents or representatives on enhancing visibility."
+            ],
+            "what_they_think_and_feel": [
+                "Concerned about losing business due to misdirected payments.",
+                "Hopeful that location-based payments will make transactions easier and error-free.",
+                "Wants to appear professional and digitally savvy to attract more customers."
+            ]
+        },
+        "matatu_operators": {
+            "what_they_see": [
+                "More passengers relying on mobile payments for convenience.",
+                "The presence of competitors who also accept M-Pesa payments.",
+                "Challenges in collecting payments when customers aren’t sure how to identify the correct matatu."
+            ],
+            "what_they_say": [
+                "‘It should be easy for passengers to pay fare without asking for details.’",
+                "‘We need a safe way to collect fares, especially during peak hours.’",
+                "‘Passengers sometimes send payments to the wrong person by mistake.’"
+            ],
+            "what_they_do": [
+                "Prompt passengers to open the app and select the correct matatu for payment.",
+                "Update location or check the app to avoid payment conflicts with nearby matatus.",
+                "Ensure their app is active to signal passengers they can pay fare."
+            ],
+            "what_they_hear": [
+                "Suggestions from peers on how to make the process smoother.",
+                "Complaints or feedback from passengers about payment difficulties.",
+                "Updates from M-Pesa or matatu associations on digital fare collection."
+            ],
+            "what_they_think_and_feel": [
+                "Frustrated by payment delays due to passenger confusion.",
+                "Wants assurance that all payments are secure and correctly assigned.",
+                "Feels proud to offer a modern, convenient payment option for passengers."
+            ]
+        },
+        "mpesa_users": {
+            "what_they_see": [
+                "Increased visibility of digital payments across local shops and transport.",
+                "Options in the app for location-based payments, helping avoid errors.",
+                "The challenge of differentiating between closely located stalls and matatus in busy areas."
+            ],
+            "what_they_say": [
+                "‘I want a quick, easy way to identify the right stall or matatu to pay.’",
+                "‘Sometimes, it’s hard to tell if I’ve picked the correct option in crowded places.’",
+                "‘I need an option to double-check before confirming a payment.’"
+            ],
+            "what_they_do": [
+                "Rely on the app's GPS suggestions to select the correct vendor or vehicle.",
+                "Occasionally confirm details with stall owners or matatu operators before paying.",
+                "Report any misdirected payments or app glitches to M-Pesa customer support."
+            ],
+            "what_they_hear": [
+                "Advice from friends or family on using the app more efficiently.",
+                "Customer support reminders on app updates or new payment features.",
+                "Feedback from vendors encouraging them to use the location-based option."
+            ],
+            "what_they_think_and_feel": [
+                "Apprehensive about selecting the wrong stall or matatu in busy areas.",
+                "Grateful for a feature that aims to simplify digital payments and increase accuracy.",
+                "Confident that location-based payments can save time and make transactions easier."
+            ]
+        }
+    }
+}

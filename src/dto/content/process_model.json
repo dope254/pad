@@ -1,0 +1,96 @@
+{
+    "process_model": {
+        "events": [
+            {
+                "id": "event_1",
+                "name": "Start Payment Process",
+                "type": "start"
+            },
+            {
+                "id": "event_2",
+                "name": "End Payment Process",
+                "type": "end"
+            }
+        ],
+        "activities": [
+            {
+                "id": "activity_1",
+                "name": "Select Payment Option",
+                "description": "The M-Pesa user selects the 'Pay' or 'Pay Fare' option in the app."
+            },
+            {
+                "id": "activity_2",
+                "name": "Detect User Location",
+                "description": "The system detects the user's location using GPS to show nearby stalls or matatus."
+            },
+            {
+                "id": "activity_3",
+                "name": "Verify Stall/Matatu Location",
+                "description": "The system confirms the stall or matatu location with the user to ensure it's accurate."
+            },
+            {
+                "id": "activity_4",
+                "name": "Display Payment Confirmation",
+                "description": "The system displays a confirmation screen for the user to verify the stall or matatu selection."
+            },
+            {
+                "id": "activity_5",
+                "name": "Process Payment",
+                "description": "The user confirms the payment, and the system processes the transaction through M-Pesa."
+            },
+            {
+                "id": "activity_6",
+                "name": "Notify Payment Success",
+                "description": "The system sends a notification to the user and the stall or matatu operator confirming the successful payment."
+            },
+            {
+                "id": "activity_7",
+                "name": "Handle Payment Error",
+                "description": "If an error occurs, the system notifies the user and allows for retry or cancellation."
+            }
+        ],
+        "gateways": [
+            {
+                "id": "gateway_1",
+                "type": "exclusive",
+                "description": "Decision point for verifying the payment process based on successful or failed validation."
+            }
+        ],
+        "data_items": [
+            {
+                "name": "User Location",
+                "type": "GPS Coordinates"
+            },
+            {
+                "name": "Payment Status",
+                "type": "Boolean"
+            },
+            {
+                "name": "Transaction Receipt",
+                "type": "String"
+            }
+        ],
+        "message_flow": [
+            {
+                "source": "M-Pesa User",
+                "target": "System",
+                "description": "User selects payment option and initiates the transaction."
+            },
+            {
+                "source": "System",
+                "target": "M-Pesa User",
+                "description": "The system confirms the payment details and requests confirmation."
+            },
+            {
+                "source": "System",
+                "target": "Stall/Matatu Operator",
+                "description": "Payment confirmation is sent to the operator."
+            },
+            {
+                "source": "System",
+                "target": "M-Pesa User",
+                "description": "Payment error message is sent if the transaction fails."
+            }
+        ]
+    }
+}
